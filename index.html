@@ -183,6 +183,49 @@
   .glass-pill .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent);animation:pulse 1.8s ease-in-out infinite;}
   @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
 
+  /* tilt-photo — cartão flutuante com foto inclinada + tag de vidro, em ângulos variados */
+  .tilt-photo{
+    position:absolute;
+    width:190px;height:250px;
+    border-radius:4px;
+    overflow:hidden;
+    border:7px solid var(--bg-alt);
+    box-shadow:0 30px 60px -25px rgba(0,0,0,.7);
+    z-index:4;
+    animation:floatTilt 6s ease-in-out infinite;
+  }
+  .tilt-photo img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(1.1);}
+  .tilt-photo .tag{
+    position:absolute;left:10px;bottom:10px;right:10px;
+    padding:8px 12px;
+    background:var(--glass-bg);
+    border:1px solid var(--glass-border);
+    border-radius:30px;
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    font-size:.68rem;letter-spacing:.04em;
+    display:flex;align-items:center;gap:6px;
+  }
+  .tilt-photo .tag .dot{width:6px;height:6px;border-radius:50%;background:var(--accent-2);flex:none;}
+  .tilt-1{transform:rotate(-8deg);}
+  .tilt-2{transform:rotate(6deg);}
+  .tilt-3{transform:rotate(-5deg);}
+  .tilt-4{transform:rotate(4deg);}
+  @keyframes floatTilt{
+    0%,100%{transform:translateY(0) rotate(var(--r,0deg));}
+    50%{transform:translateY(-12px) rotate(var(--r,0deg));}
+  }
+  .tilt-1{--r:-8deg;} .tilt-2{--r:6deg;} .tilt-3{--r:-5deg;} .tilt-4{--r:4deg;}
+
+  .tilt-about{top:-40px;right:2%;}
+  .tilt-djs{top:-30px;right:0;width:160px;height:210px;}
+  .tilt-exp{bottom:-50px;left:4%;}
+  .tilt-gallery{top:-45px;left:38%;width:170px;height:220px;}
+
+  @media (max-width:960px){
+    .tilt-photo{display:none;}
+  }
+
   /* section generic */
   section{padding:130px 0;position:relative;}
   .eyebrow{
@@ -437,6 +480,10 @@
           <strong>12k+</strong>
           <span>noites vividas</span>
         </div>
+        <div class="tilt-photo tilt-1 tilt-about">
+          <img src="https://images.unsplash.com/photo-1731331227578-b6745667761c?q=80&w=600&auto=format&fit=crop" alt="Multidão em show">
+          <div class="tag"><span class="dot"></span>Pista lotada</div>
+        </div>
       </div>
       <div class="about-text reveal">
         <p class="section-sub">Som de altíssimo nível, produção visual de peso e um público que sabe curtir. Cada detalhe é pensado pra sua noite não ter hora pra acabar.</p>
@@ -451,6 +498,10 @@
 </section>
 
 <section class="djs" id="djs">
+  <div class="tilt-photo tilt-2 tilt-djs">
+    <img src="https://images.unsplash.com/photo-1553190842-24c3f93ba116?q=80&w=500&auto=format&fit=crop" alt="Controlador de DJ">
+    <div class="tag"><span class="dot"></span>Ao vivo</div>
+  </div>
   <div class="wrap">
     <div class="eyebrow reveal">Line-up</div>
     <h2 class="section-title reveal">DJs tops, todo fim de semana.</h2>
@@ -495,6 +546,10 @@
 </div>
 
 <section class="experience" id="experiencia">
+  <div class="tilt-photo tilt-3 tilt-exp">
+    <img src="https://images.unsplash.com/photo-1618176581836-9dcf475e2b4a?q=80&w=500&auto=format&fit=crop" alt="Show noturno com multidão">
+    <div class="tag"><span class="dot"></span>Sem hora pra acabar</div>
+  </div>
   <div class="wrap">
     <div class="eyebrow reveal">A experiência</div>
     <h2 class="section-title reveal">Tudo pra sua noite ser inesquecível.</h2>
@@ -519,6 +574,10 @@
 </section>
 
 <section class="gallery" id="galeria">
+  <div class="tilt-photo tilt-4 tilt-gallery">
+    <img src="https://images.unsplash.com/photo-1516873240891-4bf014598ab4?q=80&w=500&auto=format&fit=crop" alt="DJ tocando ao vivo">
+    <div class="tag"><span class="dot"></span>Line-up top</div>
+  </div>
   <div class="wrap">
     <div class="eyebrow reveal">Galeria</div>
     <h2 class="section-title reveal">A noite em imagens.</h2>
