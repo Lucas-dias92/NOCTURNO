@@ -191,21 +191,21 @@
   /* hero strip — fileira de fotos inclinadas ao lado da imagem principal */
   .hero-strip{
     position:absolute;
-    top:0;right:-430px;
+    top:0;right:-620px;
     height:100%;
     display:flex;
-    gap:16px;
+    gap:18px;
     z-index:2;
   }
   .strip-tall{
-    position:relative;width:95px;height:100%;
+    position:relative;width:140px;height:100%;
     border:7px solid var(--bg-alt);
     border-radius:4px;overflow:hidden;
     box-shadow:0 30px 60px -25px rgba(0,0,0,.7);
     animation:floatTilt 6s ease-in-out infinite;
   }
-  .strip-tall img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(1.1);}
-  .strip-split{display:flex;flex-direction:column;gap:16px;width:95px;height:100%;}
+  .strip-tall img{width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;filter:saturate(1.15) contrast(1.05);}
+  .strip-split{display:flex;flex-direction:column;gap:18px;width:140px;height:100%;}
   .strip-small{
     position:relative;flex:1;
     border:7px solid var(--bg-alt);
@@ -213,14 +213,14 @@
     box-shadow:0 30px 60px -25px rgba(0,0,0,.7);
     animation:floatTilt 6s ease-in-out infinite;
   }
-  .strip-small img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(1.1);}
+  .strip-small img{width:100%;height:100%;object-fit:cover;object-position:center 35%;display:block;filter:saturate(1.15) contrast(1.05);}
   .strip-tall:nth-child(1){--r:-3deg;}
   .strip-tall:nth-child(2){--r:2deg;animation-delay:.4s;}
   .strip-tall:nth-child(3){--r:-2deg;animation-delay:.8s;}
   .strip-split .strip-small:nth-child(1){--r:3deg;animation-delay:.2s;}
   .strip-split .strip-small:nth-child(2){--r:-3deg;animation-delay:.6s;}
 
-  @media (max-width:1280px){
+  @media (max-width:1500px){
     .hero-strip{display:none;}
   }
 
